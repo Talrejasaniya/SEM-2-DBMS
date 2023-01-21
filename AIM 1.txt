@@ -1,0 +1,33 @@
+create table student (sid number(02)primary key ,sname varchar2(20),eid varchar2(20),pno number(10),age number(2),cname varchar2 (10),coname varchar2(10));
+insert into student values(1,'divya','divya04@gmail.com',174833483,34,'sou','imscit');
+insert into student values(2,'krisha','krisha78@gmail.com',17435883,30,'lg','bca');
+insert into student values(3,'jeet','jeet67@gmail.com',584833483,23,'gtu','msc');
+select*from student;
+
+
+create table faculty (fid number(02)primary key,fname varchar2(20),eid varchar2(20),pno number(10),age number(2),cname varchar2 (10),coname varchar2(10));
+insert into faculty values(4,'manav','manav19@gmail.com',4584954848,34,'sou','imscit');
+insert into faculty values(5,'heer','heer78@gmail.com',1748492,30,'lg','bca');
+insert into faculty  values(6,'prem','prem45@gmail.com',584483383,23,'gtu','msc');
+select*from faculty;
+
+
+create table accounts (acid number(02)primary key,ta varchar2(10),cname varchar2(10));
+insert into accounts values(9,'salary','gtu');
+insert into accounts values(8,'fees','lg');
+insert into accounts values(45,'salary','sou');
+select *from accounts;
+
+
+create table exam (te varchar2(10),eform varchar2(10),sid int references student (sid),marks number(2),cname varchar2(10));
+insert into exam values ('first','end',1,56,'sou');
+insert into exam values ('second','mid',2,78,'lg');
+insert into exam values ('third','inter',3,86,'gtu');
+select*from exam;
+
+
+create table course (cname varchar2(10),tco varchar2(10),durations varchar2(6));
+insert into course values ('sou','imscit','4years');
+insert into course values ('lg','bca','3years');
+insert into course values ('gtu','msc','2years');
+select*from course;
