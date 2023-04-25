@@ -1,0 +1,18 @@
+CREATE OR REPLACE PROCEDURE calculate_incentive (
+    p_employee_id IN NUMBER,
+    p_sales_target IN NUMBER,
+    p_general_incentive IN NUMBER,
+    p_specific_incentive IN NUMBER
+)
+IS
+    v_sales_total NUMBER;
+    v_incentive_to_pay NUMBER;
+BEGIN
+    IF v_sales_total >= p_sales_target THEN
+        v_incentive_to_pay := p_specific_incentive;
+    ELSE
+        v_incentive_to_pay := p_general_incentive;
+    END IF;
+    DBMS_OUTPUT.PUT_LINE('Incentive to pay: ' || v_incentive_to_pay);
+END;
+/

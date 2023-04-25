@@ -1,0 +1,9 @@
+DECLARE
+  v_date DATE := TO_DATE('2023-04-22','yyyy-mm-dd');
+BEGIN
+  IF TO_CHAR(v_date, 'D') IN ('1', '7') THEN
+    DBMS_OUTPUT.PUT_LINE('The date ' || v_date || ' falls on a weekend');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('The date ' || v_date || ' does not fall on a weekend');
+  END IF;
+END;

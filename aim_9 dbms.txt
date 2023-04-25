@@ -1,0 +1,24 @@
+**********basic loop***********
+declare 
+A number(2);
+begin
+for A in 0..10
+loop
+dbms_output.put_line(A);
+end loop;
+end;
+
+
+***********while loop**********
+declare
+a int;
+b int;
+begin
+a:=0;
+b:=10;
+while a<b
+loop
+a:=a+1;
+dbms_output.put_line(a);
+end loop;
+end;

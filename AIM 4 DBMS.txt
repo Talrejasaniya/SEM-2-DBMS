@@ -1,0 +1,12 @@
+declare 
+a number:=10;
+b number:=20;
+max_value number;
+begin
+if a>b then 
+ max_value:=a;
+else
+ max_value:=b;
+end if;
+DBMS_OUTPUT.PUT_LINE('the maximum value is :'||max_value);
+end;

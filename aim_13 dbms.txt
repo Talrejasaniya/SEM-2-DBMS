@@ -1,0 +1,20 @@
+create table student(id number(2),name varchar(20),age number(2));
+insert into student values(01,'xyz',12);
+insert into student values(02,'xaz',14);
+insert into student values(03,'xbz',17);
+insert into student values(04,'xcz',19);
+select*from student;
+CREATE OR REPLACE TRIGGER age_diff_trigger
+AFTER INSERT OR UPDATE OR DELETE ON STUDENT
+FOR EACH ROW
+DECLARE
+  prev_age INT;
+BEGIN
+  -- Get previous age value
+  SELECT AGE INTO prev_age FROM STUDENT WHERE ID = :OLD.ID;
+  
+  -- Compute age difference and display it
+  IF prev_age IS NOT NULL THEN
+    DBMS_OUTPUT.PUT_LINE('Age difference for ' || :OLD.NAME || ': ' || ABS(:NEW.AGE - prev_age) || ' years');
+  END IF;
+END;

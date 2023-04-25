@@ -1,0 +1,15 @@
+declare 
+n number;
+fact number;
+i number;
+begin
+n:=5;
+fact:=1;
+for i in 1..n
+    loop
+fact:=fact*i;
+end loop;
+dbms_output.put_line('factorial of'||n||'is'||fact);
+
+end;
+

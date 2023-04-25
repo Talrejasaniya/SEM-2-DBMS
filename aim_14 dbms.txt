@@ -1,0 +1,13 @@
+create sequence dept_id_seq
+start with 1
+increment by 1
+maxvalue 99
+cycle;
+select dept_id_seq.nextval from dual;
+create table department(dept_id number(2),dept_name varchar(20));
+insert into department values(dept_id_seq.nextval,'marketing');
+insert into department values(dept_id_seq.nextval,'market');
+insert into department values(dept_id_seq.nextval,'mark');
+insert into department values(dept_id_seq.nextval,'marketin');
+
+select*from department;

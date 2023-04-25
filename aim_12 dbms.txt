@@ -1,0 +1,27 @@
+create table customer(custno number(2),name varchar2(20),salary number(7));
+insert into customer values(01,'xyz',7500);
+insert into customer values(02,'xaz',6500);
+insert into customer values(03,'xbz',1500);
+insert into customer values(04,'xcz',4500);
+insert into customer values(05,'xdz',1200);
+insert into customer values(06,'abc',9000);
+insert into customer values(07,'abc',3400);
+insert into customer values(08,'abc',4300);
+select*from customer;
+
+declare
+c_no customer.custno%type;
+c_name customer.name%type;
+c_sal customer.salary%type;
+cursor c_cus is
+select custno,name,salary from customer
+order by salary desc;
+begin
+    open c_cus;
+for i in 1..5 loop
+    fetch c_cus into c_no,c_name,c_sal;
+exit when c_cus%notfound;
+dbms_output.put_line(c_no||': '||c_name||': '||c_sal);
+end loop;
+close c_cus;
+end;

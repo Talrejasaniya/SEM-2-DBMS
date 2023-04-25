@@ -1,0 +1,15 @@
+declare 
+grade char(1):='A';
+description char(50);
+begin
+description:=case grade
+when 'A'then'Excellent'
+when 'B'then'Good'
+when 'C'then'Average'
+when 'D'then'Below Average'
+when 'E'then'Fail'
+else 'invalid grade'
+end;
+dbms_output.put_line('grade'||grade);
+dbms_output.put_line('description'||description);
+end;

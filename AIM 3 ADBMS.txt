@@ -1,0 +1,25 @@
+*************TABLE CREATION**************
+create table employ(eid number(2)primary key,ename varchar(20),age number(2),salary number(5));
+
+
+insert into employ values(01,'jeet',18,7500);
+insert into employ values(02,'krisha',17,6500);
+insert into employ values(03,'divya',16,5500);
+insert into employ values(04,'hanye',19,8500);
+insert into employ values(05,'heli',17,9500);
+
+*****************QUARIES*******************
+
+1.select*from employ;
+2.select count(ename) from employ;
+3.select max(age) from employ;
+4.select min(age) from employ;
+5.select sum(age) from employ;
+6.select avg(age) from employ;
+7.create view yea as select age from employ;
+8.Select *from yea;
+9.select salary from employ group by(salary);
+10.select salary from employ order by(salary);
+11.select salary from employ order by(salary) desc;
+12.select avg(salary) from employ;
+

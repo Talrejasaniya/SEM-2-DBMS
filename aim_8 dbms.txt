@@ -1,0 +1,6 @@
+create table employee(em_no number(2),de_no number(2),salary number(7));
+insert into employee values(01,20,1500);
+insert into employee values(02,21,2500);
+insert into employee values(03,22,4500);
+update employee set salary=7500 where de_no=20;
+select*from employee;
